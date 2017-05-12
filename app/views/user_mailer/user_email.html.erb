@@ -6,5 +6,16 @@
   </head>
   <body>
     <p> Thanks for wasting money on us!! </p>
+
+    <ul>
+    <% @order.line_items.each do |line_item| %>
+      <li><%= line_item.product.name %></li>
+      <li><%= line_item.product.price%></li>
+      <li><%= line_item.product.description %></li>
+      <li><%= line_item.product.image.tiny %></li>
+      <li><%= line_item.quantity %></li>
+    <% end %>
+    </ul>
+
   </body>
 </html>
