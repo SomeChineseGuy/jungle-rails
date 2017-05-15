@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   root to: 'products#index'
+  resources :reviews, only: [:destroy]
+  resources :products, only: [:index, :show] do
+  resources :reviews, only: [:create]
+end
 
-  resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
   resource :cart, only: [:show] do

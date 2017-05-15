@@ -24,7 +24,14 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
-    </div>
+      
+      <div class="reivews">
+        <%= render "review", reviews: @reviews %>
+          <% if current_user %>
+          <%= render "review_form", product: @product, review: @review %>
+          <% end %>
+        </div>
+      </div>
 
   </article>
 
